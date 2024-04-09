@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
       theme: CupertinoThemeData(
-        brightness: Brightness.dark,
-        barBackgroundColor: Color.fromARGB(255, 255, 20, 30),
+        brightness: Brightness.light,
+        barBackgroundColor: Color.fromARGB(255, 255, 40, 30),
       ),
       home: const MyHomePage(title: 'Seif Tamer Heakal'),
       title: 'Seif Tamer Heakal',
@@ -1190,11 +1190,19 @@ class view5 extends StatelessWidget {
                     autoPlayCurve: Curves.fastOutSlowIn,
                     autoPlayInterval: Duration(seconds: 2),
                     autoPlayAnimationDuration: Duration(milliseconds: 1000),
-                  ))
+                  )),
+            CupertinoButton(
+              child: Text("Click me"),
+              onPressed: () {},
+            ),        
             ],
           ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+class _buildPopupDialog {
+  _buildPopupDialog(BuildContext context);
 }
