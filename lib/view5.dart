@@ -2,6 +2,7 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class view5 extends StatelessWidget {
   const view5({super.key});
@@ -16,16 +17,16 @@ class view5 extends StatelessWidget {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return CupertinoPageScaffold(
-      backgroundColor: Color.fromARGB(255, 200, 150, 150),
-      navigationBar: CupertinoNavigationBar(
+    return Scaffold(
+      
+      appBar: CupertinoNavigationBar(
         middle: Text(
           "Creative",
           style: TextStyle(fontSize: 30),
         ),
         previousPageTitle: 'Home',
       ),
-      child: SingleChildScrollView(
+      body: SingleChildScrollView(
         physics: BouncingScrollPhysics(
             decelerationRate: ScrollDecelerationRate.normal),
         child: Center(

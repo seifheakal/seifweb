@@ -16,7 +16,7 @@ class view2 extends StatelessWidget {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return CupertinoPageScaffold(
-      backgroundColor: Color.fromARGB(255, 200, 150, 150),
+    
       navigationBar: CupertinoNavigationBar(
         middle: Text(
           "EDUCATION",

@@ -8,6 +8,7 @@ import 'package:seifweb/view1.dart';
 import 'package:seifweb/view2.dart';
 import 'package:seifweb/view3.dart';
 import 'package:seifweb/view5.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,16 +19,16 @@ class MyAppColors {
   static final lightBlue = Color.fromARGB(255, 68, 58, 45);
 }
 
-class MyAppThemes {
-  static final lightTheme = ThemeData(
-    primaryColor: MyAppColors.lightBlue,
-    brightness: Brightness.light,
-  );
-
-  static final darkTheme = ThemeData(
-    primaryColor: MyAppColors.darkBlue,
-    brightness: Brightness.dark,
-  );
+class messages extends Translations {
+  @override
+  Map<String, Map<String, String>> get keys => {
+        'en': {
+          'hello': 'Hello World',
+        },
+        'ar': {
+          'hello': 'مرحبا بالعالم',
+        },
+      };
 }
 
 class MyApp extends StatelessWidget {
@@ -36,14 +37,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: CupertinoThemeData(
-        brightness: Brightness.light,
-        barBackgroundColor: Color.fromARGB(255, 255, 40, 30),
-      ),
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: const Color.fromARGB(255, 17, 9, 40)),
+      theme: ThemeData.light(),
       home: const MyHomePage(title: 'Seif Tamer Heakal'),
       title: 'Seif Tamer Heakal',
+      locale: const Locale('en'),
+      translations: messages(),
     );
   }
 }
@@ -81,17 +84,17 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildPopupDialog(BuildContext context) {
-    return new CupertinoAlertDialog(
+    return new AlertDialog(
       title: const Text('Popup example'),
       content: new Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text("Hello"),
+          Text("hello".tr),
         ],
       ),
       actions: <Widget>[
-        new CupertinoButton.filled(
+        new FilledButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -103,120 +106,111 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
           "SEIF TAMER HEAKAL",
           style: TextStyle(fontSize: 30),
         ),
-        trailing: CupertinoButton(
-            child: IconButton(
-                icon: Icon(Icons.language), onPressed: _incrementCounter),
-            onPressed: _incrementCounter),
-        leading: CupertinoButton(
-            child: IconButton(
-                icon: Icon(Icons.dark_mode), onPressed: _incrementCounter),
-            onPressed: _incrementCounter),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.language),
+            onPressed: () {
+              Get.updateLocale(Get.locale?.languageCode == 'en'
+                  ? Locale('ar')
+                  : Locale('en'));
+            },
+          ),
+        ],
+        leading: IconButton(
+            icon: Icon(Icons.dark_mode),
+            onPressed: () {
+              Get.changeThemeMode(
+                  Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
+            }),
       ),
       //backgroundColor: Color.fromARGB(255, 255, 105, 105),
-      child: SingleChildScrollView(
+      body: SingleChildScrollView(
         physics: BouncingScrollPhysics(
             decelerationRate: ScrollDecelerationRate.normal),
         child: Center(
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: CupertinoButton(
-                      color: const CupertinoDynamicColor.withBrightness(
-                        color: CupertinoColors.systemRed,
-                        darkColor: CupertinoColors.activeBlue,
-                      ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => const view1()),
+                          MaterialPageRoute(builder: (context) => const view1()),
                         );
                       },
                       child: Text("Projects"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: CupertinoButton(
-                      color: const CupertinoDynamicColor.withBrightness(
-                        color: CupertinoColors.systemRed,
-                        darkColor: CupertinoColors.activeBlue,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const view2()),
-                        );
-                      },
-                      child: Text("Education"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: CupertinoButton(
-                      color: const CupertinoDynamicColor.withBrightness(
-                        color: CupertinoColors.systemRed,
-                        darkColor: CupertinoColors.activeBlue,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const view3()),
-                        );
-                      },
-                      child: Text(
-                        "Experince",
-                        //style: TextStyle(fontSize: 30),
+                    ).paddingAll(12),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          elevation: 3,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const view2()),
+                          );
+                        },
+                        child: Text("Education"),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: CupertinoButton(
-                      color: const CupertinoDynamicColor.withBrightness(
-                        color: CupertinoColors.systemRed,
-                        darkColor: CupertinoColors.activeBlue,
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const view3()),
+                          );
+                        },
+                        child: Text(
+                          "Experince",
+                          //style: TextStyle(fontSize: 30),
+                        ),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const view4()),
-                        );
-                      },
-                      child: Text("Skills"),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: CupertinoButton(
-                      color: const CupertinoDynamicColor.withBrightness(
-                        color: CupertinoColors.systemRed,
-                        darkColor: CupertinoColors.activeBlue,
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const view4()),
+                          );
+                        },
+                        child: Text("Skills"),
                       ),
-                      child: Text("Creative"),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const view5()),
-                        );
-                      },
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: ElevatedButton(
+                        child: Text("Creative"),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const view5()),
+                          );
+                        },
+                      ),
+                    )
+                  ],
+                ),
               ),
               SizedBox(
                 height: 150,
@@ -226,22 +220,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: const Text(
+                    child: Text(
                       'Hi',
                       style:
-                          TextStyle(fontSize: 70, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: MediaQuery.of(context).size.width*0.05, fontWeight: FontWeight.bold),
                     ),
                   ),
                   AnimatedEmoji(
                     AnimatedEmojis.wave,
-                    size: 50,
+                    size: 30,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(25.0),
                     child: Text(
                       "Hello from the other world",
                       style: TextStyle(
-                        fontSize: 60,
+                        fontSize: MediaQuery.of(context).size.width*0.05,
                       ),
                     ),
                   )
@@ -250,8 +244,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 child: Text(""),
                 decoration: BoxDecoration(
-                  border: Border.all(
-                      color: Color.fromARGB(255, 255, 0, 0), width: 4),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(150, 0, 0, 0),
+                      blurRadius: 10.0,
+                      spreadRadius: 10.0,
+                      offset: Offset(0.0, 0.0),
+                    ),
+                  ],
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     fit: BoxFit.cover,

@@ -10,9 +10,9 @@ class view1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      backgroundColor: Color.fromARGB(255, 200, 150, 150),
-      navigationBar: CupertinoNavigationBar(
+    return Scaffold(
+      
+      appBar: CupertinoNavigationBar(
         middle: Text(
           "PROJECTS",
           style: TextStyle(fontSize: 30),
@@ -20,7 +20,7 @@ class view1 extends StatelessWidget {
         previousPageTitle: 'Home',
       ),
 
-      child: SingleChildScrollView(
+      body: SingleChildScrollView(
         physics: BouncingScrollPhysics(
             decelerationRate: ScrollDecelerationRate.normal),
         child: Center(
