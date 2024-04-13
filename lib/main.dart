@@ -26,10 +26,19 @@ class messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en': {
-          'hello': 'Hello World',
+          
         },
         'ar': {
-          'hello': 'مرحبا بالعالم',
+          'Seif Tamer Heakal': 'سيف تامر هيكل',
+          'Hello from the other world':'مرحبا من عالم اخر',
+          'Projects':'مشاريع',
+          'Education':'تعليم',
+          'Experince':'خبرة',
+          'Skills':'مهارات',
+          'Creative':'ابداع',
+          'Hi':'مرحبا',
+          'My links':'روابطي',
+          'SEIF TAMER HEAKAL':'سيف تامر هيكل',
         },
       };
 }
@@ -46,8 +55,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: const Color.fromARGB(255, 17, 9, 40)),
       theme: ThemeData.light(),
-      home: const MyHomePage(title: 'Seif Tamer Heakal'),
-      title: 'Seif Tamer Heakal',
+      home:  MyHomePage(title: 'Seif Tamer Heakal'.tr),
+      title: 'Seif Tamer Heakal'.tr,
       locale: const Locale('en'),
       translations: messages(),
     );
@@ -128,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "SEIF TAMER HEAKAL",
+          "SEIF TAMER HEAKAL".tr,
           style: TextStyle(fontSize: 30),
         ),
         actions: [
@@ -171,7 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (context) => const view1()),
                         );
                       },
-                      child: Text("Projects"),
+                      child: Text("Projects".tr),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
                         vertical: 5),
@@ -186,7 +195,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (context) => const view2()),
                         );
                       },
-                      child: Text("Education"),
+                      child: Text("Education".tr),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
                         vertical: 5),
@@ -202,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         );
                       },
                       child: Text(
-                        "Experince",
+                        "Experince".tr,
                         //style: TextStyle(fontSize: 30),
                       ),
                     ).paddingSymmetric(
@@ -219,7 +228,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (context) => const view4()),
                         );
                       },
-                      child: Text("Skills"),
+                      child: Text("Skills".tr),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
                         vertical: 5),
@@ -227,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: ElevatedButton.styleFrom(
                         elevation: 3,
                       ),
-                      child: Text("Creative"),
+                      child: Text("Creative".tr),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -250,7 +259,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'Hi',
+                      'Hi'.tr,
                       style: TextStyle(
                           fontSize: MediaQuery.of(context).size.width * 0.05,
                           fontWeight: FontWeight.bold),
@@ -263,7 +272,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: const EdgeInsets.all(25.0),
                     child: Text(
-                      "Hello from the other world",
+                      "Hello from the other world".tr,
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * 0.05,
                       ),
