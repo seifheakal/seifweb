@@ -4,11 +4,13 @@ import 'package:animated_emoji/animated_emoji.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:seifweb/view1.dart';
-import 'package:seifweb/view2.dart';
-import 'package:seifweb/view3.dart';
-import 'package:seifweb/view5.dart';
+import 'package:seifweb/projects.dart';
+import 'package:seifweb/education.dart';
+import 'package:seifweb/exprince.dart';
+import 'package:seifweb/creative.dart';
+import 'package:seifweb/skills.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -85,12 +87,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildPopupDialog(BuildContext context) {
     return new AlertDialog(
-      title: const Text('Popup example'),
+      title: const Text('MY links'),
       content: new Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text("hello".tr),
+          
+            Column(children: [
+              InkWell(
+              child:  Text("linkedin : www.linkedin.com/in/seif-heakal"),
+            onTap: () {
+              launch("www.linkedin.com/in/seif-heakal");
+            },
+              ),
+            InkWell(
+              child:  Text("Gmail :      seiftamer06@gmail.com"),
+            onTap: () {
+              launch("mailto:seiftamer06@gmail.com");
+            },
+              ),
+            ],),
+          
         ],
       ),
       actions: <Widget>[
@@ -143,72 +160,83 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 3,
+                      ),
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const view1()),
+                          MaterialPageRoute(
+                              builder: (context) => const view1()),
                         );
                       },
                       child: Text("Projects"),
-                    ).paddingAll(12),
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          elevation: 3,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const view2()),
-                          );
-                        },
-                        child: Text("Education"),
+                    ).paddingSymmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.05,
+                        vertical: 5),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 3,
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const view3()),
-                          );
-                        },
-                        child: Text(
-                          "Experince",
-                          //style: TextStyle(fontSize: 30),
-                        ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const view2()),
+                        );
+                      },
+                      child: Text("Education"),
+                    ).paddingSymmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.05,
+                        vertical: 5),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 3,
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const view4()),
-                          );
-                        },
-                        child: Text("Skills"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const view3()),
+                        );
+                      },
+                      child: Text(
+                        "Experince",
+                        //style: TextStyle(fontSize: 30),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: ElevatedButton(
-                        child: Text("Creative"),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const view5()),
-                          );
-                        },
+                    ).paddingSymmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.05,
+                        vertical: 5),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 3,
                       ),
-                    )
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const view4()),
+                        );
+                      },
+                      child: Text("Skills"),
+                    ).paddingSymmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.05,
+                        vertical: 5),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 3,
+                      ),
+                      child: Text("Creative"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const view5()),
+                        );
+                      },
+                    ).paddingSymmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.05,
+                        vertical: 5)
                   ],
                 ),
               ),
@@ -222,20 +250,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'Hi',
-                      style:
-                          TextStyle(fontSize: MediaQuery.of(context).size.width*0.05, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.width * 0.05,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                   AnimatedEmoji(
                     AnimatedEmojis.wave,
-                    size: 30,
+                    size: 50,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(25.0),
                     child: Text(
                       "Hello from the other world",
                       style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width*0.05,
+                        fontSize: MediaQuery.of(context).size.width * 0.05,
                       ),
                     ),
                   )
@@ -246,7 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Color.fromARGB(150, 0, 0, 0),
+                      color: Color.fromARGB(100, 0, 0, 0),
                       blurRadius: 10.0,
                       spreadRadius: 10.0,
                       offset: Offset(0.0, 0.0),
@@ -280,20 +309,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Icon(Icons.link),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: FloatingActionButton(
-                      onPressed: _incrementCounter,
-                      child: Icon(Icons.web_asset),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: FloatingActionButton(
-                      onPressed: _incrementCounter,
-                      child: Icon(Icons.mail),
-                    ),
-                  ),
+                
                 ],
               ),
             ],
@@ -302,4 +318,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  launch(String s) {}
 }
