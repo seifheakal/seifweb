@@ -15,16 +15,16 @@ class view3 extends StatelessWidget {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return CupertinoPageScaffold(
+    return Scaffold(
       
-      navigationBar: CupertinoNavigationBar(
+      appBar: CupertinoNavigationBar(
         middle: Text(
           "EXPRINCE",
           style: TextStyle(fontSize: 30),
         ),
         previousPageTitle: 'Home',
       ),
-      child: SingleChildScrollView(
+      body: SingleChildScrollView(
         physics: BouncingScrollPhysics(
             decelerationRate: ScrollDecelerationRate.normal),
         child: Center(

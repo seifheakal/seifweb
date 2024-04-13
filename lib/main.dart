@@ -11,6 +11,7 @@ import 'package:seifweb/creative.dart';
 import 'package:seifweb/skills.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 void main() {
   runApp(const MyApp());
@@ -96,14 +97,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Column(children: [
               InkWell(
               child:  Text("linkedin : www.linkedin.com/in/seif-heakal"),
-            onTap: () {
-              launch("www.linkedin.com/in/seif-heakal");
+            onTap: ()async {
+              html.window.open("www.linkedin.com/in/seif-heakal", "linkedin");
             },
               ),
             InkWell(
               child:  Text("Gmail :      seiftamer06@gmail.com"),
-            onTap: () {
-              launch("mailto:seiftamer06@gmail.com");
+            onTap: () async {
+              html.window.open("www.linkedin.com/in/seif-heakal", "linkedin");
             },
               ),
             ],),
