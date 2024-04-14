@@ -18,12 +18,13 @@ class view4 extends StatelessWidget {
     // than having to individually change instances of widgets.
     return Scaffold(
 
-      appBar: CupertinoNavigationBar(
-        middle: Text(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
           "SKILLS",
           style: TextStyle(fontSize: 30),
         ),
-        previousPageTitle: 'Home',
+        
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(
@@ -56,9 +57,9 @@ class view4 extends StatelessWidget {
                               child: Text(
                                 "C++",
                                 style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.deepPurpleAccent),
+                                  ),
                               ),
                             ),
                           ),
@@ -186,7 +187,7 @@ class view4 extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(25.0),
                             child: Text(
-                              "MySQl",
+                              "MySQL",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,13 +9,12 @@ class view1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      appBar: CupertinoNavigationBar(
-        middle: Text(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
           "PROJECTS",
           style: TextStyle(fontSize: 30),
         ),
-        previousPageTitle: 'Home',
       ),
 
       body: SingleChildScrollView(
@@ -56,13 +53,16 @@ class view1 extends StatelessWidget {
                         SizedBox(
                           child: Padding(
                             padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "Microprocessor",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Text(
+                                "Microprocessor",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.45,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
                       ],
@@ -81,12 +81,17 @@ class view1 extends StatelessWidget {
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.45,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
                       ],
                     ),
                   ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
                   Card(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +107,7 @@ class view1 extends StatelessWidget {
                               ),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.45,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
                       ],
@@ -121,7 +126,7 @@ class view1 extends StatelessWidget {
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.45,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
                       ],
@@ -145,7 +150,7 @@ class view1 extends StatelessWidget {
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.45,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
                       ],
@@ -164,47 +169,7 @@ class view1 extends StatelessWidget {
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "numerical",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "Risk",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.45,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
                       ],
@@ -223,52 +188,14 @@ class view1 extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(25.0),
                             child: Text(
-                              " basic",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "manu",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.2,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "history",
+                              "Numerical",
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.45,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
                       ],
@@ -282,12 +209,101 @@ class view1 extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(25.0),
                             child: Text(
-                              "technical",
+                              "Risk",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.25,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Card(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "Basic",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.25,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "Manufracturing",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.25,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                
+                  Card(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "History",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.25,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "Technical",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.45,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
                       ],

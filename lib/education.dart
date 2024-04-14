@@ -17,12 +17,12 @@ class view2 extends StatelessWidget {
     // than having to individually change instances of widgets.
     return Scaffold(
     
-      appBar: CupertinoNavigationBar(
-        middle: Text(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
           "EDUCATION",
           style: TextStyle(fontSize: 30),
         ),
-        previousPageTitle: 'Home',
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(

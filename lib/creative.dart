@@ -1,4 +1,3 @@
-
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,13 +17,12 @@ class view5 extends StatelessWidget {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      
-      appBar: CupertinoNavigationBar(
-        middle: Text(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
           "Creative",
           style: TextStyle(fontSize: 30),
         ),
-        previousPageTitle: 'Home',
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(
@@ -43,15 +41,18 @@ class view5 extends StatelessWidget {
                       children: [
                         RichText(
                           text: TextSpan(
-                            children: <TextSpan>[
+                            children: [
                               TextSpan(
-                                text: 'Have Fun ', // non-emoji characters
-                              ),
+                                  text: "Have fun",
+                                  style: TextStyle(
+                                      foreground: Paint()..color = Colors.red,
+                                      fontWeight: FontWeight.bold)),
                               TextSpan(
                                 text: '😜', // emoji characters
                                 style: TextStyle(
                                   fontFamily: 'EmojiOne',
-                                  fontSize: 12,
+                                  fontSize: 15,
+                                  foreground: Paint()..color = Colors.red,
                                 ),
                               ),
                             ],
@@ -69,7 +70,6 @@ class view5 extends StatelessWidget {
                     autoPlayInterval: Duration(seconds: 2),
                     autoPlayAnimationDuration: Duration(milliseconds: 1000),
                   )),
-                
             ],
           ),
         ),

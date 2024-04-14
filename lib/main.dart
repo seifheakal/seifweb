@@ -25,20 +25,20 @@ class MyAppColors {
 class messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
-        'en': {
-          
-        },
+        'en': {},
         'ar': {
           'Seif Tamer Heakal': 'سيف تامر هيكل',
-          'Hello from the other world':'مرحبا من عالم اخر',
-          'Projects':'مشاريع',
-          'Education':'تعليم',
-          'Experince':'خبرة',
-          'Skills':'مهارات',
-          'Creative':'ابداع',
-          'Hi':'مرحبا',
-          'My links':'روابطي',
-          'SEIF TAMER HEAKAL':'سيف تامر هيكل',
+          'Hello from the other world': 'مرحبا من عالم اخر',
+          'Projects': 'مشاريع',
+          'Education': 'تعليم',
+          'Experience': 'خبرة',
+          'Skills': 'مهارات',
+          'Creative': 'ابداع',
+          'Hi': 'مرحبا',
+          'MY links': 'روابطي',
+          'SEIF TAMER HEAKAL': 'سيف تامر هيكل',
+          'Website still under construction': 'الموقع تحت الانشاء',
+          
         },
       };
 }
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: const Color.fromARGB(255, 17, 9, 40)),
       theme: ThemeData.light(),
-      home:  MyHomePage(title: 'Seif Tamer Heakal'.tr),
+      home: MyHomePage(title: 'Seif Tamer Heakal'.tr),
       title: 'Seif Tamer Heakal'.tr,
       locale: const Locale('en'),
       translations: messages(),
@@ -97,27 +97,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildPopupDialog(BuildContext context) {
     return new AlertDialog(
-      title: const Text('MY links'),
+      title:  Text('MY links'.tr),
       content: new Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          
-            Column(children: [
+          Column(
+            children: [
               InkWell(
-              child:  Text("linkedin : www.linkedin.com/in/seif-heakal"),
-            onTap: ()async {
-              html.window.open("www.linkedin.com/in/seif-heakal", "linkedin");
-            },
+                child: Text("linkedin : www.linkedin.com/in/seif-heakal"),
+                onTap: () async {
+                  html.window
+                      .open("www.linkedin.com/in/seif-heakal", "linkedin");
+                },
               ),
-            InkWell(
-              child:  Text("Gmail :      seiftamer06@gmail.com"),
-            onTap: () async {
-              html.window.open("www.linkedin.com/in/seif-heakal", "linkedin");
-            },
+              InkWell(
+                child: Text("Gmail :      seiftamer06@gmail.com"),
+                onTap: () async {
+                  html.window
+                      .open("www.linkedin.com/in/seif-heakal", "linkedin");
+                },
               ),
-            ],),
-          
+            ],
+          ),
         ],
       ),
       actions: <Widget>[
@@ -211,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         );
                       },
                       child: Text(
-                        "Experince".tr,
+                        "Experience".tr,
                         //style: TextStyle(fontSize: 30),
                       ),
                     ).paddingSymmetric(
@@ -319,8 +321,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Icon(Icons.link),
                     ),
                   ),
-                
                 ],
+              ),
+              Text(
+                "Website still under construction".tr,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.width * 0.05,
+                ),),
+
+                AnimatedEmoji(
+                  AnimatedEmojis.grinSweat,
+                  size: 50,
+
               ),
             ],
           ),
