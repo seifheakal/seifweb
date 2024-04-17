@@ -333,7 +333,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   AnimatedEmojis.grinSweat,
                   size: 50,
 
-              ),
+              ).paddingSymmetric(vertical: 50),
             ],
           ),
         ),
