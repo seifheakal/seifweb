@@ -328,12 +328,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(
                   fontSize: MediaQuery.of(context).size.width * 0.05,
                 ),),
-
-                AnimatedEmoji(
-                  AnimatedEmojis.grinSweat,
-                  size: 50,
-
-              ).paddingSymmetric(vertical: 50),
             ],
           ),
         ),
