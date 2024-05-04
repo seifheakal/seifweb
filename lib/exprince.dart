@@ -1,208 +1,154 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class view3 extends StatelessWidget {
   const view3({super.key});
 
+  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
     return Scaffold(
       
-      body: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(
-                  text: "Formal experience",
-                ),
-                Tab(
-                  text: "Extras experience",
-                ),
-              ],
-            ),
-            title: const Text('Exprience'),
-            centerTitle: true,
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ),
-          body: TabBarView(
-              children: [
-                SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  physics: BouncingScrollPhysics(
-                  decelerationRate: ScrollDecelerationRate.normal),
-                  child: Center(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "EXPRINCE",
+          style: TextStyle(fontSize: 30),
+        ),
+      ),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(
+            decelerationRate: ScrollDecelerationRate.normal),
+        child: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+            children: [
+              Text(
+                "Formal Exprince",
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Card(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Text(
-                            "TEDx Fundraising team member",
-                            style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
-                            
-                          ),
-                        ),
-                        Center(
+                        SizedBox(
                           child: Padding(
-                            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                            child: Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.9,
-                                  child: const Text(
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
-                                      "Helped in raising funds for the event, and helped in organizing the event and getting the sponsors for the event to be a great and successful event"),
-                                ),
-                              ),
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "Echem",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Text(
-                            "Internship at Echem",
-                            style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "Learned feasibility studies, tendering and contract types, process of establishingcompanies from the idea phase till the end of construction and start of operation"),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Text(
-                            "Math / CS teaching assistant",
-                            style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "Helped students in understanding the course material, and helped in solving their problems and questions and explaining the material in a simple way"),
-                              ),
-                            ),
-                          ),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.6,
                         ),
                       ],
                     ),
                   ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  physics: BouncingScrollPhysics(
-                  decelerationRate: ScrollDecelerationRate.normal),
-                  child: Center(
+                  Card(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Text(
-                            "RYLA secrets of success",
-                            style: TextStyle(fontSize: 30),
-                          ),
-                        ),
-                        Center(
+                        SizedBox(
                           child: Padding(
-                            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                            child: Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.9,
-                                  child: const Text(
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                      ),
-                                      "RYLA in Ain el shokhna, learned the secrets of success, and how to be a successful person in life and in work, and how to be a leader in the community and in the work place"),
-                                ),
-                              ),
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "Teaching Assistant",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Text(
-                            "BRITISH council your world competition",
-                            style: TextStyle(fontSize: 30),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "participated  in the competition and learned how to be a good speaker and how to present my ideas in a simple and clear way."),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Text(
-                            "MUN at AUC",
-                            style: TextStyle(fontSize: 30),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "leaened how to be a good debater and how to present my ideas in a professional way, and how to be a good listener and how to understand the other person's point of view and how to respect it and how to respond to it in a professional way"),
-                              ),
-                            ),
-                          ),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.6,
                         ),
                       ],
                     ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
+              Text(
+                "Extras",
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Card(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "RYLA",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "British Council your world competition",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(25.0),
+                            child: Text(
+                              "MUN",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
-      );
-    
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
   }
 }

@@ -17,6 +17,11 @@ void main() {
   runApp(const MyApp());
 }
 
+class MyAppColors {
+  static final darkBlue = Color.fromARGB(255, 245, 101, 101);
+  static final lightBlue = Color.fromARGB(255, 68, 58, 45);
+}
+
 class messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
@@ -79,7 +84,16 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   @override
-  
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+    });
+  }
 
   Widget _buildPopupDialog(BuildContext context) {
     return new AlertDialog(

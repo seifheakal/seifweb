@@ -233,7 +233,7 @@ class view1 extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(25.0),
                             child: Text(
-                              "Computer Arch.",
+                              "Basic",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
