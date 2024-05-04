@@ -163,7 +163,7 @@ class view4 extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(25.0),
                             child: Text(
-                              "VDHL",
+                              "VHDL",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
