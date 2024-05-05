@@ -1,5 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+_launchURLBrowser() async {
+  var url = Uri.parse("https://github.com/seifheakal");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 class view1 extends StatelessWidget {
   const view1({super.key});
@@ -43,6 +54,14 @@ class view1 extends StatelessWidget {
           //),
           child: Column(
             children: [
+              
+                      // Text("Github link: "),
+                      // GestureDetector(
+                      //               child: new CustomToolTip(text: "https://github.com/seifheakal"),
+                      //               onTap: () {},
+                      // ),
+
+                    TextButton(onPressed: _launchURLBrowser, child: Text("Github: seifheakal"),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -268,7 +287,6 @@ class view1 extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                
                   Card(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -316,6 +334,23 @@ class view1 extends StatelessWidget {
           // ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class CustomToolTip extends StatelessWidget {
+  String text;
+
+  CustomToolTip({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return new GestureDetector(
+      child: new Tooltip(
+          preferBelow: false, message: "click to copy", child: new Text(text)),
+      onTap: () {
+        Clipboard.setData(new ClipboardData(text: text));
+      },
     );
   }
 }

@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, camel_case_types, prefer_const_constructors, sort_child_properties_last, unnecessary_new
 
 import 'package:animated_emoji/animated_emoji.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:seifweb/projects.dart';
@@ -15,6 +14,14 @@ import 'dart:html' as html;
 
 void main() {
   runApp(const MyApp());
+}
+_launchURLBrowser() async {
+  var url = Uri.parse("https://www.linkedin.com/in/seif-heakal");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
 }
 
 class messages extends Translations {
@@ -81,43 +88,43 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   
 
-  Widget _buildPopupDialog(BuildContext context) {
-    return new AlertDialog(
-      title:  Text('MY links'.tr),
-      content: new Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Column(
-            children: [
-              InkWell(
-                child: Text("linkedin : www.linkedin.com/in/seif-heakal"),
-                onTap: () async {
-                  html.window
-                      .open("www.linkedin.com/in/seif-heakal", "linkedin");
-                },
-              ),
-              InkWell(
-                child: Text("Gmail :      seiftamer06@gmail.com"),
-                onTap: () async {
-                  html.window
-                      .open("www.linkedin.com/in/seif-heakal", "linkedin");
-                },
-              ),
-            ],
-          ),
-        ],
-      ),
-      actions: <Widget>[
-        new FilledButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: Text('Close'),
-        ),
-      ],
-    );
-  }
+  // Widget _buildPopupDialog(BuildContext context) {
+  //   return new AlertDialog(
+  //     title:  Text('MY links'.tr),
+  //     content: new Column(
+  //       mainAxisSize: MainAxisSize.min,
+  //       crossAxisAlignment: CrossAxisAlignment.start,
+  //       children: <Widget>[
+  //         Column(
+  //           children: [
+  //             InkWell(
+  //               child: Text("linkedin : www.linkedin.com/in/seif-heakal"),
+  //               onTap: () async {
+  //                 html.window
+  //                     .open("www.linkedin.com/in/seif-heakal", "linkedin");
+  //               },
+  //             ),
+  //             InkWell(
+  //               child: Text("Gmail :      seiftamer06@gmail.com"),
+  //               onTap: () async {
+  //                 html.window
+  //                     .open("www.linkedin.com/in/seif-heakal", "linkedin");
+  //               },
+  //             ),
+  //           ],
+  //         ),
+  //       ],
+  //     ),
+  //     actions: <Widget>[
+  //       new FilledButton(
+  //         onPressed: () {
+  //           Navigator.of(context).pop();
+  //         },
+  //         child: Text('Close'),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -294,19 +301,29 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: FloatingActionButton(
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) =>
-                              _buildPopupDialog(context),
-                        );
-                      },
-                      child: Icon(Icons.link),
-                    ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(12.0),
+                  //   child: FloatingActionButton(
+                  //     onPressed: () {
+                  //       showDialog(
+                  //         context: context,
+                  //         builder: (BuildContext context) =>
+                  //             _buildPopupDialog(context),
+                  //       );
+                  //     },
+                  //     child: Icon(Icons.link),
+                  //   ),
+                  // ),
+                  
+                  TextButton(onPressed: _launchURLBrowser, child: Text("linkidin: www.linkedin.com/in/seif-heakal"),),
+                  
+                  Row(
+                    children: [
+                      Text( "Gmail: "),
+                      SelectableText("seiftamer06@hmail.com")
+                    ],
                   ),
+                  
                 ],
               ),
               Text(
