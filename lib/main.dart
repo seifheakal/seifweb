@@ -2,7 +2,7 @@
 
 import 'package:animated_emoji/animated_emoji.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/services.dart';
 import 'package:seifweb/projects.dart';
 import 'package:seifweb/education.dart';
 import 'package:seifweb/exprince.dart';
@@ -320,7 +320,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     children: [
                       Text( "Gmail: "),
-                      SelectableText("seiftamer06@hmail.com")
+                      GestureDetector(
+                            child: new CustomToolTip(text: "seiftamer06@gmail.com"),
+                            onTap: () {},
+                      ),
                     ],
                   ),
                   
@@ -339,4 +342,22 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   launch(String s) {}
+}
+
+// ignore: must_be_immutable
+class CustomToolTip extends StatelessWidget {
+  String text;
+
+  CustomToolTip({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return new GestureDetector(
+      child: new Tooltip(
+          preferBelow: false, message: "click to copy", child: new Text(text)),
+      onTap: () {
+        Clipboard.setData(new ClipboardData(text: text));
+      },
+    );
+  }
 }

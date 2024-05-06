@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:overlapped_carousel/overlapped_carousel.dart';
 
 class view5 extends StatelessWidget {
   const view5({super.key});
@@ -34,32 +34,9 @@ class view5 extends StatelessWidget {
             children: [
               CarouselSlider(
                   items: [
-                    Text("Hi"),
-                    Text("This is my experimenting page"),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                  text: "Have fun",
-                                  style: TextStyle(
-                                      foreground: Paint()..color = Colors.red,
-                                      fontWeight: FontWeight.bold)),
-                              TextSpan(
-                                text: '😜', // emoji characters
-                                style: TextStyle(
-                                  fontFamily: 'EmojiOne',
-                                  fontSize: 15,
-                                  foreground: Paint()..color = Colors.red,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    )
+                    Text("Hi", style: TextStyle(fontSize: 15),),
+                    Text("This is my experimenting page", style: TextStyle(fontSize: 15),),
+                    Text("Have Fun!", style: TextStyle(fontSize: 15),),
                   ],
                   options: CarouselOptions(
                     height: 20,
@@ -70,14 +47,11 @@ class view5 extends StatelessWidget {
                     autoPlayInterval: Duration(seconds: 2),
                     autoPlayAnimationDuration: Duration(milliseconds: 1000),
                   )),
+                  
             ],
           ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
-
-class _buildPopupDialog {
-  _buildPopupDialog(BuildContext context);
 }
