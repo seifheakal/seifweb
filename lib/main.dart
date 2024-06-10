@@ -275,7 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               TextButton(
                 onPressed: _launchURLBrowsere,
-                child: Text("Gmail: mailto:seiftamer06@gmail.com"),
+                child: Text("Gmail: seiftamer06@gmail.com"),
               ),
               Text(
                 "Website still under construction".tr,
