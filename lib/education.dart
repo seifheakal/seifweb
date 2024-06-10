@@ -137,7 +137,7 @@ class View2 extends StatelessWidget {
                           child: const Padding(
                             padding: EdgeInsets.all(25.0),
                             child: Text(
-                              "ISTQB foundation level",
+                              "Google Digital Marketing Certificate",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),

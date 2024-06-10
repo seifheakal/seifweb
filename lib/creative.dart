@@ -1,12 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_progress_bar/animated_progress_bar.dart';
-import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:readmore/readmore.dart';
 import 'package:flutter_scatter/flutter_scatter.dart';
 import 'package:collection/collection.dart';
-import 'package:overlapped_carousel/overlapped_carousel.dart';
 final List<String> imgList = [
   'https://i0.wp.com/astrafizik.com/wp-content/uploads/2022/12/Quantum_Computing_Image.webp',
   'https://www.collegetransitions.com/wp-content/uploads/2024/01/ap-physics-cem-calculator.jpg',
@@ -276,49 +274,4 @@ class ReadQuranAmount {
   ReadQuranAmount(this.year, this.pages);
   final String year;
   final double pages;
-}
-
-class overlappedfinalboss extends StatefulWidget {
-  const overlappedfinalboss({Key? key}) : super(key: key);
-
-  @override
-  _overlappedfinalbossState createState() => _overlappedfinalbossState();
-}
-
-class _overlappedfinalbossState extends State<overlappedfinalboss> {
-  int _currentIndex = 1;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 250,
-      width: MediaQuery.of(context).size.width * 0.95,
-      child: OverlappedCarousel(
-          currentIndex: _currentIndex,
-          widgets: [
-            Container(
-              color: Colors.red,
-              child: const Center(
-                child: Text(
-                  "1",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-            ),
-            Container(
-              color: Colors.blue,
-              child: const Center(
-                child: Text(
-                  "2",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-            ),
-          ],
-          onClicked: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          }),
-    );
-  }
 }

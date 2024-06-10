@@ -213,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               SizedBox(
-                height: 150,
+                height: 100,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -267,7 +267,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               TextButton(
                 onPressed: _launchURLBrowser,
-                child: Text("linkidin: www.linkedin.com/in/seif-heakal"),
+                child: Text("linkedin: www.linkedin.com/in/seif-heakal"),
               ),
               TextButton(
                 onPressed: _launchURLBrowserr,
