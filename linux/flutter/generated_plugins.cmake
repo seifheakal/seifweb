@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  animated_progress_bar
   url_launcher_linux
 )
 

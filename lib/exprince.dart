@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class view3 extends StatelessWidget {
-  const view3({super.key});
+class View3 extends StatelessWidget {
+  const View3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class view3 extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
+            bottom: const TabBar(
               tabs: [
                 Tab(
                   text: "Formal experience",
@@ -24,7 +24,7 @@ class view3 extends StatelessWidget {
             title: const Text('Exprience'),
             centerTitle: true,
             leading: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -34,13 +34,13 @@ class view3 extends StatelessWidget {
               children: [
                 SingleChildScrollView(
                   scrollDirection: Axis.vertical,
-                  physics: BouncingScrollPhysics(
+                  physics: const BouncingScrollPhysics(
                   decelerationRate: ScrollDecelerationRate.normal),
                   child: Center(
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
                             "TEDx Fundraising team member",
                             style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
@@ -65,8 +65,8 @@ class view3 extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
                             "Internship at Echem",
                             style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
@@ -88,8 +88,8 @@ class view3 extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
                             "Math / CS teaching assistant",
                             style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
@@ -117,13 +117,13 @@ class view3 extends StatelessWidget {
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.vertical,
-                  physics: BouncingScrollPhysics(
+                  physics: const BouncingScrollPhysics(
                   decelerationRate: ScrollDecelerationRate.normal),
                   child: Center(
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
                             "RYLA secrets of success",
                             style: TextStyle(fontSize: 30),
@@ -147,8 +147,8 @@ class view3 extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
                             "BRITISH council your world competition",
                             style: TextStyle(fontSize: 30),
@@ -170,8 +170,8 @@ class view3 extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
                             "MUN at AUC",
                             style: TextStyle(fontSize: 30),

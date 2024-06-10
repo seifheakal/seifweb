@@ -1,9 +1,8 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class view2 extends StatelessWidget {
-  const view2({super.key});
+class View2 extends StatelessWidget {
+  const View2({super.key});
 
   // This widget is the root of your application.
 
@@ -19,20 +18,20 @@ class view2 extends StatelessWidget {
     
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "EDUCATION",
           style: TextStyle(fontSize: 30),
         ),
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(
+        physics: const BouncingScrollPhysics(
             decelerationRate: ScrollDecelerationRate.normal),
         child: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
           child: Column(
             children: [
-              Text(
+              const Text(
                 "Formal Education",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
@@ -44,16 +43,16 @@ class view2 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: const Padding(
+                            padding: EdgeInsets.all(25.0),
                             child: Text(
                               "Cairo Univeristy",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.45,
-                          height: MediaQuery.of(context).size.height * 0.6,
                         ),
                       ],
                     ),
@@ -63,23 +62,23 @@ class view2 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: const Padding(
+                            padding: EdgeInsets.all(25.0),
                             child: Text(
                               "Nis School",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.45,
-                          height: MediaQuery.of(context).size.height * 0.6,
                         ),
                       ],
                     ),
                   ),
                 ],
               ),
-              Text(
+              const Text(
                 "Extra Education",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
@@ -91,16 +90,16 @@ class view2 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                          child: const Padding(
+                            padding: EdgeInsets.all(25.0),
                             child: Text(
                               "IBM Cybersecurity Analyst Professional Certificate",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.25,
-                          height: MediaQuery.of(context).size.height * 0.3,
                         ),
                       ],
                     ),
@@ -110,40 +109,43 @@ class view2 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                          child: const Padding(
+                            padding: EdgeInsets.all(25.0),
                             child: Text(
                               "ISTQB foundation level",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width * 0.25,
-                          height: MediaQuery.of(context).size.height * 0.3,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "Fundamentals of digital marketing",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.25,
-                          height: MediaQuery.of(context).size.height * 0.3,
                         ),
                       ],
                     ),
                   ),
                 ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [Card(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.3,
+                          child: const Padding(
+                            padding: EdgeInsets.all(25.0),
+                            child: Text(
+                              "ISTQB foundation level",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),],
               ),
             ],
           ),

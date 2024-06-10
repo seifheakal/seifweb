@@ -10,13 +10,32 @@ import 'package:seifweb/creative.dart';
 import 'package:seifweb/skills.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:html' as html;
+
 
 void main() {
   runApp(const MyApp());
 }
+
 _launchURLBrowser() async {
   var url = Uri.parse("https://www.linkedin.com/in/seif-heakal");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_launchURLBrowsere() async {
+  var url = Uri.parse("mailto:seiftamer06@gmail.coml");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_launchURLBrowserr() async {
+  var url = Uri.parse("https://github.com/seifheakal");
   if (await canLaunchUrl(url)) {
     await launchUrl(url);
   } else {
@@ -40,7 +59,6 @@ class messages extends Translations {
           'MY links': 'روابطي',
           'SEIF TAMER HEAKAL': 'سيف تامر هيكل',
           'Website still under construction': 'الموقع تحت الانشاء',
-          
         },
       };
 }
@@ -68,15 +86,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -84,48 +93,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  @override
-  
-
-  // Widget _buildPopupDialog(BuildContext context) {
-  //   return new AlertDialog(
-  //     title:  Text('MY links'.tr),
-  //     content: new Column(
-  //       mainAxisSize: MainAxisSize.min,
-  //       crossAxisAlignment: CrossAxisAlignment.start,
-  //       children: <Widget>[
-  //         Column(
-  //           children: [
-  //             InkWell(
-  //               child: Text("linkedin : www.linkedin.com/in/seif-heakal"),
-  //               onTap: () async {
-  //                 html.window
-  //                     .open("www.linkedin.com/in/seif-heakal", "linkedin");
-  //               },
-  //             ),
-  //             InkWell(
-  //               child: Text("Gmail :      seiftamer06@gmail.com"),
-  //               onTap: () async {
-  //                 html.window
-  //                     .open("www.linkedin.com/in/seif-heakal", "linkedin");
-  //               },
-  //             ),
-  //           ],
-  //         ),
-  //       ],
-  //     ),
-  //     actions: <Widget>[
-  //       new FilledButton(
-  //         onPressed: () {
-  //           Navigator.of(context).pop();
-  //         },
-  //         child: Text('Close'),
-  //       ),
-  //     ],
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -172,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const view1()),
+                              builder: (context) => const View1()),
                         );
                       },
                       child: Text("Projects".tr),
@@ -187,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const view2()),
+                              builder: (context) => const View2()),
                         );
                       },
                       child: Text("Education".tr),
@@ -202,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const view3()),
+                              builder: (context) => const View3()),
                         );
                       },
                       child: Text(
@@ -220,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const view4()),
+                              builder: (context) =>  View4()),
                         );
                       },
                       child: Text("Skills".tr),
@@ -236,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const view5()),
+                              builder: (context) => const View5()),
                         );
                       },
                     ).paddingSymmetric(
@@ -298,42 +265,24 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(
                 height: 100,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Padding(
-                  //   padding: const EdgeInsets.all(12.0),
-                  //   child: FloatingActionButton(
-                  //     onPressed: () {
-                  //       showDialog(
-                  //         context: context,
-                  //         builder: (BuildContext context) =>
-                  //             _buildPopupDialog(context),
-                  //       );
-                  //     },
-                  //     child: Icon(Icons.link),
-                  //   ),
-                  // ),
-                  
-                  TextButton(onPressed: _launchURLBrowser, child: Text("linkidin: www.linkedin.com/in/seif-heakal"),),
-                  
-                  Row(
-                    children: [
-                      Text( "Gmail: "),
-                      GestureDetector(
-                            child: new CustomToolTip(text: "seiftamer06@gmail.com"),
-                            onTap: () {},
-                      ),
-                    ],
-                  ),
-                  
-                ],
+              TextButton(
+                onPressed: _launchURLBrowser,
+                child: Text("linkidin: www.linkedin.com/in/seif-heakal"),
+              ),
+              TextButton(
+                onPressed: _launchURLBrowserr,
+                child: Text("Github: seifheakal"),
+              ),
+              TextButton(
+                onPressed: _launchURLBrowsere,
+                child: Text("Gmail: mailto:seiftamer06@gmail.com"),
               ),
               Text(
                 "Website still under construction".tr,
                 style: TextStyle(
                   fontSize: MediaQuery.of(context).size.width * 0.05,
-                ),),
+                ),
+              ),
             ],
           ),
         ),
@@ -348,7 +297,7 @@ class _MyHomePageState extends State<MyHomePage> {
 class CustomToolTip extends StatelessWidget {
   String text;
 
-  CustomToolTip({required this.text});
+  CustomToolTip({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

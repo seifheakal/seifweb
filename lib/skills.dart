@@ -1,225 +1,118 @@
 import 'package:flutter/material.dart';
+import 'package:word_cloud/word_cloud.dart'; // Import the word_cloud packag
 
-class view4 extends StatelessWidget {
-  const view4({super.key});
-
-  // This widget is the root of your application.
-
+class View4 extends StatelessWidget {
+  const View4({super.key});
+  
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    final List<Map> word_list =[
+    {'word': 'Apple', 'value': 100},
+    {'word': 'Samsung', 'value': 60},
+    {'word': 'Intel', 'value': 55},
+    {'word': 'Tesla', 'value': 50},
+    {'word': 'AMD', 'value': 40},
+    {'word': 'Google', 'value': 35},
+    {'word': 'Qualcom', 'value': 31},
+    {'word': 'Netflix', 'value': 27},
+    {'word': 'Meta', 'value': 27},
+    {'word': 'Amazon', 'value': 26},
+    {'word': 'Nvidia', 'value': 25},
+    {'word': 'Microsoft', 'value': 25},
+    {'word': 'TSMC', 'value': 24},
+    {'word': 'PayPal', 'value': 24},
+    {'word': 'AT&T', 'value': 24},
+    {'word': 'Oracle', 'value': 23},
+    {'word': 'Unity', 'value': 23},
+    {'word': 'Roblox', 'value': 23},
+    {'word': 'Lucid', 'value': 22},
+    {'word': 'Naver', 'value': 20},
+    {'word': 'Kakao', 'value': 18},
+    {'word': 'NC Soft', 'value': 18},
+    {'word': 'LG', 'value': 16},
+    {'word': 'Hyundai', 'value': 16},
+    {'word': 'KIA', 'value': 16},
+    {'word': 'twitter', 'value': 16},
+    {'word': 'Tencent', 'value': 15},
+    {'word': 'Alibaba', 'value': 15},
+    {'word': 'LG', 'value': 16},
+    {'word': 'Hyundai', 'value': 16},
+    {'word': 'KIA', 'value': 16},
+    {'word': 'twitter', 'value': 16},
+    {'word': 'Tencent', 'value': 15},
+    {'word': 'Alibaba', 'value': 15},
+    {'word': 'Disney', 'value': 14},
+    {'word': 'Spotify', 'value': 14},
+    {'word': 'Udemy', 'value': 13},
+    {'word': 'Quizlet', 'value': 13},
+    {'word': 'Visa', 'value': 12},
+    {'word': 'Lucid', 'value': 22},
+    {'word': 'Naver', 'value': 20},
+    {'word': 'Hyundai', 'value': 16},
+    {'word': 'KIA', 'value': 16},
+    {'word': 'twitter', 'value': 16},
+    {'word': 'Tencent', 'value': 15},
+    {'word': 'Alibaba', 'value': 15},
+    {'word': 'Disney', 'value': 14},
+    {'word': 'Spotify', 'value': 14},
+    {'word': 'Visa', 'value': 12},
+    {'word': 'Microsoft', 'value': 10},
+    {'word': 'TSMC', 'value': 10},
+    {'word': 'PayPal', 'value': 24},
+    {'word': 'AT&T', 'value': 10},
+    {'word': 'Oracle', 'value': 10},
+    {'word': 'Unity', 'value': 10},
+    {'word': 'Roblox', 'value': 10},
+    {'word': 'Lucid', 'value': 10},
+    {'word': 'Naver', 'value': 10},
+    {'word': 'Kakao', 'value': 18},
+    {'word': 'NC Soft', 'value': 18},
+    {'word': 'LG', 'value': 16},
+    {'word': 'Hyundai', 'value': 16},
+    {'word': 'KIA', 'value': 16},
+    {'word': 'twitter', 'value': 16},
+    {'word': 'Tencent', 'value': 10},
+    {'word': 'Alibaba', 'value': 10},
+    {'word': 'Disney', 'value': 14},
+    {'word': 'Spotify', 'value': 14},
+    {'word': 'Udemy', 'value': 13},
+    {'word': 'NC Soft', 'value': 12},
+    {'word': 'LG', 'value': 16},
+    {'word': 'Hyundai', 'value': 10},
+    {'word': 'KIA', 'value': 16},
+  ];
+    WordCloudData wcdata = WordCloudData(data: word_list);
     return Scaffold(
-
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "SKILLS",
           style: TextStyle(fontSize: 30),
         ),
-        
       ),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(
+      body:  SingleChildScrollView(
+        physics: const BouncingScrollPhysics(
             decelerationRate: ScrollDecelerationRate.normal),
         child: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
           child: Column(
             children: [
-              Text(
+              const Text(
                 "My Skills",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('assets/c++.png'),
-                                ),
-                              ),
-                              child: Text(
-                                "C++",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                              ),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.35,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "C#",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.35,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "Matlab",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.35,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "Assemblx86",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.35,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "Assembly Arm",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.35,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "VHDL",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.35,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "MySQL",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.35,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Text(
-                              "Flutter",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.35,
-                          height: MediaQuery.of(context).size.height * 0.25,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+
+              WordCloudView(
+                  data: wcdata,
+                  mapwidth: MediaQuery.of(context).size.width * 0.95,
+                  mapheight: MediaQuery.of(context).size.width * 0.95,
+                  fontWeight: FontWeight.bold,
+                  colorlist: [Color.fromARGB(255, 0, 255, 34), Colors.redAccent, Colors.indigoAccent],
+                ),
+  
             ],
           ),
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
