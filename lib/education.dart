@@ -79,7 +79,7 @@ class View2 extends StatelessWidget {
                 ],
               ),
               const Text(
-                "Extra Education",
+                "Additional Education",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
               Row(
@@ -127,25 +127,28 @@ class View2 extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.45,
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          child: const Padding(
-                            padding: EdgeInsets.all(25.0),
-                            child: Text(
-                              "Google Digital Marketing Certificate",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                children: [Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.45,
+                            height: MediaQuery.of(context).size.height * 0.3,
+                            child: const Padding(
+                              padding: EdgeInsets.all(25.0),
+                              child: Text(
+                                "Google Digital Marketing Certificate",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),],
+                ),],
               ),
             ],
           ),

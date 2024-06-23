@@ -135,6 +135,14 @@ class View5 extends StatelessWidget {
                 height: 20,
               ),
               //progress bar
+              const Text(
+                "progress in junior cyber security analyst course by cisco",
+                style: TextStyle(fontSize: 20),
+              ),
+              //spacer
+              const SizedBox(
+                height: 20,
+              ),
               const SizedBox(
                 /// set the [width] and [height] of the displayable area
                 height: 150,
@@ -166,26 +174,26 @@ class View5 extends StatelessWidget {
                 endIndent: 10,
               ),
               const Text(
-                "Read quran pages per month",
+                "Focus hours per month",
                 style: TextStyle(fontSize: 20),
               ),
               SfCartesianChart(
                 // Initialize category axis
                 primaryXAxis: const CategoryAxis(),
 
-                series: <LineSeries<ReadQuranAmount, String>>[
-                  LineSeries<ReadQuranAmount, String>(
+                series: <LineSeries<FocusHours, String>>[
+                  LineSeries<FocusHours, String>(
                       // Bind data source
-                      dataSource: <ReadQuranAmount>[
-                        ReadQuranAmount('Jan', 35),
-                        ReadQuranAmount('Feb', 28),
-                        ReadQuranAmount('Mar', 34),
-                        ReadQuranAmount('Apr', 32),
-                        ReadQuranAmount('May', 40),
-                        ReadQuranAmount('Jun', 30)
+                      dataSource: <FocusHours>[
+                        FocusHours('Jan', 110),
+                        FocusHours('Feb', 118),
+                        FocusHours('Mar', 144),
+                        FocusHours('Apr', 132),
+                        FocusHours('May', 150),
+                        FocusHours('Jun', 230)
                       ],
-                      xValueMapper: (ReadQuranAmount sales, _) => sales.year,
-                      yValueMapper: (ReadQuranAmount sales, _) => sales.pages,
+                      xValueMapper: (FocusHours sales, _) => sales.year,
+                      yValueMapper: (FocusHours sales, _) => sales.hours,
                       // Enable data label
                       dataLabelSettings:
                           const DataLabelSettings(isVisible: true))
@@ -270,8 +278,8 @@ class View5 extends StatelessWidget {
   }
 }
 
-class ReadQuranAmount {
-  ReadQuranAmount(this.year, this.pages);
+class FocusHours {
+  FocusHours(this.year, this.hours);
   final String year;
-  final double pages;
+  final double hours;
 }

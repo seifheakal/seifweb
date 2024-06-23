@@ -51,8 +51,8 @@ class View4 extends StatelessWidget {
               const Text("Everytime the shape of the Word cloud changes", style: TextStyle(fontSize: 20),),
               WordCloudView(
                   data: wcdata,
-                  mapwidth: MediaQuery.of(context).size.width>1000? MediaQuery.of(context).size.width*.7: MediaQuery.of(context).size.width* 0.95,
-                  mapheight: MediaQuery.of(context).size.height>700?300 :MediaQuery.of(context).size.height*.9,
+                  mapwidth: MediaQuery.of(context).size.width>1000? MediaQuery.of(context).size.width*.7: MediaQuery.of(context).size.width,
+                  mapheight: MediaQuery.of(context).size.height>700?300 :MediaQuery.of(context).size.height,
                   fontWeight: FontWeight.bold,
                   colorlist: const [Color.fromARGB(255, 0, 255, 34), Colors.redAccent, Colors.indigoAccent],
                 ),
