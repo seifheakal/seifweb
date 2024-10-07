@@ -219,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   AnimatedTextKit(
                     animatedTexts: [
-                      TyperAnimatedText('Computer engneering student',
+                      TyperAnimatedText('Computer engineering student',
                           textStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: MediaQuery.of(context).size.width * 0.05,
