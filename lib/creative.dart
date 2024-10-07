@@ -5,6 +5,7 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:readmore/readmore.dart';
 import 'package:flutter_scatter/flutter_scatter.dart';
 import 'package:collection/collection.dart';
+
 final List<String> imgList = [
   'https://i0.wp.com/astrafizik.com/wp-content/uploads/2022/12/Quantum_Computing_Image.webp',
   'https://www.collegetransitions.com/wp-content/uploads/2024/01/ap-physics-cem-calculator.jpg',
@@ -12,6 +13,7 @@ final List<String> imgList = [
   'https://miro.medium.com/v2/resize:fit:720/format:webp/0*EwgCmUQXtqcuUBfx.jpg',
   'https://pbs.twimg.com/media/DhlXy5TW4AEqdH6?format=jpg&name=small',
 ];
+
 class View5 extends StatelessWidget {
   const View5({super.key});
 
@@ -20,44 +22,36 @@ class View5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> imageSliders = imgList
-    .map((item) => Container(
-      margin: const EdgeInsets.all(5.0),
-      child: ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-          child: Stack(
-            children: <Widget>[
-              Image.network(item, fit: BoxFit.cover, width: 1000.0),
-              Positioned(
-                bottom: 0.0,
-                left: 0.0,
-                right: 0.0,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color.fromARGB(200, 0, 0, 0),
-                        Color.fromARGB(0, 0, 0, 0)
-                      ],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 10.0, horizontal: 20.0),
-                  // child: Text(
-                  //   'No. ${imgList.indexOf(item)} image',
-                  //   style: const TextStyle(
-                  //     color: Colors.white,
-                  //     fontSize: 20.0,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  // ),
-                ),
-              ),
-            ],
-          )),
-    ))
-    .toList();
+        .map((item) => Container(
+              margin: const EdgeInsets.all(5.0),
+              child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+                  child: Stack(
+                    children: <Widget>[
+                      Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                      Positioned(
+                        bottom: 0.0,
+                        left: 0.0,
+                        right: 0.0,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(200, 0, 0, 0),
+                                Color.fromARGB(0, 0, 0, 0)
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 20.0),
+                        ),
+                      ),
+                    ],
+                  )),
+            ))
+        .toList();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -90,7 +84,6 @@ class View5 extends StatelessWidget {
                   ),
                 ],
                 options: CarouselOptions(
-                  
                   height: 20,
                   enableInfiniteScroll: true,
                   autoPlay: true,
@@ -136,7 +129,7 @@ class View5 extends StatelessWidget {
               ),
               //progress bar
               const Text(
-                "progress in junior cyber security analyst course by cisco",
+                "progress in junior cyber security analyst course by CISCO",
                 style: TextStyle(fontSize: 20),
               ),
               //spacer
@@ -190,7 +183,10 @@ class View5 extends StatelessWidget {
                         FocusHours('Mar', 144),
                         FocusHours('Apr', 132),
                         FocusHours('May', 150),
-                        FocusHours('Jun', 230)
+                        FocusHours('Jun', 230),
+                        FocusHours("July", 90),
+                        FocusHours("Aug", 280),
+                        FocusHours("Sep", 240)
                       ],
                       xValueMapper: (FocusHours sales, _) => sales.year,
                       yValueMapper: (FocusHours sales, _) => sales.hours,
@@ -244,14 +240,12 @@ class View5 extends StatelessWidget {
               Scatter(
                 fillGaps: true,
                 children: [
-                  "hi",
-                  "hello",
-                  "bye",
-                  "goodbye",
-                  "goodnight",
-                  "goodmorning",
-                  "goodafternoon",
-                  "goodday"
+                  "Cyber Security",
+                  "Quantum Computing",
+                  "Digital Hardware Design",
+                  "Layout",
+                  "Testing",
+                  "Verification",
                 ]
                     .map((x) => Text(
                           x,

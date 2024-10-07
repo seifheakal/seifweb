@@ -10,7 +10,7 @@ import 'package:seifweb/creative.dart';
 import 'package:seifweb/skills.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text("Projects".tr),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
-                        vertical: 5),
+                        vertical: 10),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 3,
@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text("Education".tr),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
-                        vertical: 5),
+                        vertical: 10),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 3,
@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
-                        vertical: 5),
+                        vertical: 10),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 3,
@@ -186,14 +186,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) =>  View4()),
+                          MaterialPageRoute(builder: (context) => View4()),
                         );
                       },
                       child: Text("Skills".tr),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
-                        vertical: 5),
+                        vertical: 10),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 3,
@@ -208,39 +207,39 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
-                        vertical: 5)
+                        vertical: 10)
                   ],
                 ),
               ),
               SizedBox(
-                height: 100,
+                height: 50,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText('Computer engneering student',
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: MediaQuery.of(context).size.width * 0.05,
+                          ),
+                          speed: Duration(milliseconds: 100),
+                          curve: Curves.easeIn),
+                    ],
+                    onTap: () {},
+                  ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Hi'.tr,
-                      style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width * 0.05,
-                          fontWeight: FontWeight.bold),
+                    padding: const EdgeInsets.only(left: 10),
+                    child: AnimatedEmoji(
+                      AnimatedEmojis.wave,
+                      size: 50,
                     ),
                   ),
-                  AnimatedEmoji(
-                    AnimatedEmojis.wave,
-                    size: 50,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(25.0),
-                    child: Text(
-                      "Hello from the other world".tr,
-                      style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width * 0.05,
-                      ),
-                    ),
-                  )
                 ],
+              ),
+              SizedBox(
+                height: 30,
               ),
               Container(
                 child: Text(""),
@@ -263,25 +262,69 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 200,
               ),
               SizedBox(
-                height: 100,
+                height: 70,
               ),
-              TextButton(
+
+              const Text(
+                "About Me",
+                style: TextStyle(fontSize: 30),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: Column(
+                    children: [
+                      const Text(
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.normal),
+                        "I’m a computer engineering student with a passion for both technology and creativity. My journey blends technical expertise with a creative mindset, inspired by the themes of perseverance and adventure in *One Piece*, which have also shaped my artistic pursuits.",
+                      ),
+                      SizedBox(height: 15,),
+                      Text(
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.normal),
+                          "Technically, I’ve built valuable hands-on experience through internships at Huawei and Si-Vision. At Huawei, I worked on virtualization, server configuration, and network management, managing VMs, VRMs, and data stores while performing live migrations and disaster recovery. At Si-Vision, I focused on analog layout design, mastering short channel effects, matching techniques, and utilizing Synopsys tools to create layouts that passed DRC and LVS."),
+                      SizedBox(height: 15,),
+                      Text(
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.normal),
+                          "During my summer internship at ECHEM, I gained insight into feasibility studies, tendering, contract types, and the process of establishing a company from concept to operation. I also developed strong work ethics, marketing skills, and an understanding of working in a professional environment."),
+                      SizedBox(height: 15,),
+                      Text(
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.normal),
+                          "By merging my creative and technical skills, I approach challenges with unique perspectives. I am particularly intrigued by hardware innovation and emerging technologies like quantum computing, and I aim to contribute meaningfully by integrating creativity with technical expertise.")
+                    ],
+                  ),
+                ),
+              ),
+                            TextButton(
                 onPressed: _launchURLBrowser,
-                child: Text("linkedin: www.linkedin.com/in/seif-heakal"),
+                child: Text(
+                  "linkedin: www.linkedin.com/in/seif-heakal",
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
               TextButton(
                 onPressed: _launchURLBrowserr,
-                child: Text("Github: seifheakal"),
+                child: Text(
+                  "Github: seifheakal",
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
               TextButton(
                 onPressed: _launchURLBrowsere,
-                child: Text("Gmail: seiftamer06@gmail.com"),
-              ),
-              Text(
-                "Website still under construction".tr,
-                style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.width * 0.05,
+                child: Text(
+                  "Gmail: seiftamer06@gmail.com",
+                  style: TextStyle(fontSize: 20),
                 ),
+              ),
+              SizedBox(
+                height: 30,
               ),
             ],
           ),

@@ -6,7 +6,7 @@ class View4 extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    final List<Map> word_list =[
+    final List<Map> wordlist =[
     {'word': 'C++', 'value': 100},
     {'word': 'C#', 'value': 40},
     {'word': 'VHDL', 'value': 80},
@@ -26,7 +26,7 @@ class View4 extends StatelessWidget {
     {'word': 'Winform','value': 34},
   ];
   
-    WordCloudData wcdata = WordCloudData(data: word_list);
+    WordCloudData wcdata = WordCloudData(data: wordlist);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

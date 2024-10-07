@@ -39,6 +39,58 @@ class View3 extends StatelessWidget {
                   child: Center(
                     child: Column(
                       children: [
+                         const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                          child: Text(
+                            "SI-Vison",
+                            style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                            
+                          ),
+                        ),
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                            child: Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.9,
+                                  child: const Text(
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                      ),
+                                      "Analog Layout Design Intern: Gained hands-on experience in analog layout design, focusing on key concepts such as short channel effects, the semiconductor manufacturing process, and matching techniques for high-performance analog circuits. Proficient in using Synopsys tools for layout design, successfully completing a project that met both Design Rule Check (DRC) and Layout Versus Schematic (LVS) standards."),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                         const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                          child: Text(
+                            "Huawei ",
+                            style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                            
+                          ),
+                        ),
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                            child: Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.9,
+                                  child: const Text(
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                      ),
+                                      "Virtualization and Infrastructure Management Intern: Installed and managed VMs, VRMs, and data stores. Used MobaXterm for monitoring, health checks, and live migrations. Monitored KPIs and gained experience in disaster recovery processes."),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                         const Padding(
                           padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
@@ -68,7 +120,7 @@ class View3 extends StatelessWidget {
                         const Padding(
                           padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
-                            "Internship at Echem",
+                            "Echem",
                             style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -125,6 +177,56 @@ class View3 extends StatelessWidget {
                         const Padding(
                           padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
+                            "NASA Space Apps Cairo 2024 Participant",
+                            style: TextStyle(fontSize: 30),
+                          ),
+                        ),
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                            child: Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.9,
+                                  child: const Text(
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                      ),
+                                      "Contributed to a community mapping system designed to showcase general statistics about local communities. Developed heatmaps to visually represent data, enhancing accessibility and understanding for users. This project aimed to facilitate community engagement and provide valuable insights through intuitive mapping techniques."),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                          child: Text(
+                            "Softwaregeya 2024 - Second Place Winner",
+                            style: TextStyle(fontSize: 30),
+                          ),
+                        ),
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                            child: Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.9,
+                                  child: const Text(
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                      ),
+                                      "Participated in a national programming competition focused on low-level programming using assembly language. Collaborated on the development of a boot loader, showcasing a deep understanding of computer architecture and system-level programming. Achieved second place, demonstrating strong problem-solving skills and proficiency in assembly language."),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                          child: Text(
                             "RYLA secrets of success",
                             style: TextStyle(fontSize: 30),
                           ),
@@ -150,7 +252,7 @@ class View3 extends StatelessWidget {
                         const Padding(
                           padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                           child: Text(
-                            "BRITISH council your world competition",
+                            "British council your world competition",
                             style: TextStyle(fontSize: 30),
                           ),
                         ),
