@@ -11,6 +11,7 @@ class View4 extends StatelessWidget {
     {'word': 'C#', 'value': 40},
     {'word': 'VHDL', 'value': 80},
     {'word': 'Flutter', 'value': 70},
+    {'word': 'Python','value':60},
     {'word': 'Assemblx86', 'value': 50},
     {'word': 'Arm Assembly', 'value': 55},
     {'word': 'MySQL', 'value': 35},

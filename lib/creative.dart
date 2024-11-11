@@ -186,7 +186,9 @@ class View5 extends StatelessWidget {
                         FocusHours('Jun', 230),
                         FocusHours("July", 90),
                         FocusHours("Aug", 280),
-                        FocusHours("Sep", 240)
+                        FocusHours("Sep", 240),
+                        FocusHours("Oct", 200),
+                        FocusHours("Nov", 120),
                       ],
                       xValueMapper: (FocusHours sales, _) => sales.year,
                       yValueMapper: (FocusHours sales, _) => sales.hours,

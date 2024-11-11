@@ -59,6 +59,14 @@ class messages extends Translations {
           'MY links': 'روابطي',
           'SEIF TAMER HEAKAL': 'سيف تامر هيكل',
           'Website still under construction': 'الموقع تحت الانشاء',
+          'I’m a computer engineering student with a passion for both technology and creativity. My journey blends technical expertise with a creative mindset, inspired by the themes of perseverance and adventure in *One Piece*, which have also shaped my artistic pursuits.':
+              'أنا طالب هندسة كمبيوتر بشغف للتكنولوجيا والإبداع. تمزج رحلتي بين الخبرة التقنية والعقلية الإبداعية، مستوحاة من مواضيع الصمود والمغامرة في *ون بيس*، التي شكلت أيضًا مساعيي الفنية.',
+          'Technically, I’ve built valuable hands-on experience through internships at Huawei and Si-Vision. At Huawei, I worked on virtualization, server configuration, and network management, managing VMs, VRMs, and data stores while performing live migrations and disaster recovery. At Si-Vision, I focused on analog layout design, mastering short channel effects, matching techniques, and utilizing Synopsys tools to create layouts that passed DRC and LVS.':
+              'من الناحية التقنية، اكتسبت خبرة عملية قيمة من خلال التدريب الصيفي في هواوي وسي-فيجن. في هواوي، عملت على التجازؤ، تكوين الخادم، وإدارة الشبكة، إدارة الآلات الظاهرية، ومخازن البيانات أثناء أداء الترحيل المباشر واستعادة الكوارث. في سي-فيجن، ركزت على تصميم التخطيط الأنالوجي، واستيعاب تأثيرات القناة القصيرة، وتقنيات المطابقة، واستخدام أدوات سينوبسي لإنشاء تخطيطات تجاوزت DRC و LVS.',
+          'During my summer internship at ECHEM, I gained insight into feasibility studies, tendering, contract types, and the process of establishing a company from concept to operation. I also developed strong work ethics, marketing skills, and an understanding of working in a professional environment.':
+              'خلال التدريب الصيفي في إيكيم، اكتسبت رؤى حول دراسات الجدوى، العطاءات، أنواع العقود، وعملية إنشاء شركة من المفهوم إلى التشغيل. كما وضعت أخلاقيات العمل القوية، ومهارات التسويق، وفهم العمل في بيئة مهنية.',
+          'By merging my creative and technical skills, I approach challenges with unique perspectives. I am particularly intrigued by hardware innovation and emerging technologies like quantum computing, and I aim to contribute meaningfully by integrating creativity with technical expertise.': 
+              'من خلال دمج مهاراتي الإبداعية والتقنية، أقترب من التحديات بآفاق فريدة. أنا مهتم بشكل خاص بالابتكار في مجال الأجهزة والتقنيات الناشئة مثل الحوسبة الكمية، وأهدف إلى المساهمة بشكل معنوي من خلال دمج الإبداع مع الخبرة التقنية.',
         },
       };
 }
@@ -305,7 +313,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             TextButton(
                 onPressed: _launchURLBrowser,
                 child: Text(
-                  "linkedin: www.linkedin.com/in/seif-heakal",
+                  "linkedin: Seif Heakal",
                   style: TextStyle(fontSize: 20),
                 ),
               ),
