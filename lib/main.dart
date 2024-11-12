@@ -286,26 +286,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: MediaQuery.of(context).size.width * 0.9,
                   child: Column(
                     children: [
-                      const Text(
+                      Text(
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.normal),
-                        "I’m a computer engineering student with a passion for both technology and creativity. My journey blends technical expertise with a creative mindset, inspired by the themes of perseverance and adventure in *One Piece*, which have also shaped my artistic pursuits.",
+                        "I’m a computer engineering student with a passion for both technology and creativity. My journey blends technical expertise with a creative mindset, inspired by the themes of perseverance and adventure in *One Piece*, which have also shaped my artistic pursuits.".tr,
                       ),
                       SizedBox(height: 15,),
                       Text(
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
-                          "Technically, I’ve built valuable hands-on experience through internships at Huawei and Si-Vision. At Huawei, I worked on virtualization, server configuration, and network management, managing VMs, VRMs, and data stores while performing live migrations and disaster recovery. At Si-Vision, I focused on analog layout design, mastering short channel effects, matching techniques, and utilizing Synopsys tools to create layouts that passed DRC and LVS."),
+                          "Technically, I’ve built valuable hands-on experience through internships at Huawei and Si-Vision. At Huawei, I worked on virtualization, server configuration, and network management, managing VMs, VRMs, and data stores while performing live migrations and disaster recovery. At Si-Vision, I focused on analog layout design, mastering short channel effects, matching techniques, and utilizing Synopsys tools to create layouts that passed DRC and LVS.".tr),
                       SizedBox(height: 15,),
                       Text(
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
-                          "During my summer internship at ECHEM, I gained insight into feasibility studies, tendering, contract types, and the process of establishing a company from concept to operation. I also developed strong work ethics, marketing skills, and an understanding of working in a professional environment."),
+                          "During my summer internship at ECHEM, I gained insight into feasibility studies, tendering, contract types, and the process of establishing a company from concept to operation. I also developed strong work ethics, marketing skills, and an understanding of working in a professional environment.".tr),
                       SizedBox(height: 15,),
                       Text(
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
-                          "By merging my creative and technical skills, I approach challenges with unique perspectives. I am particularly intrigued by hardware innovation and emerging technologies like quantum computing, and I aim to contribute meaningfully by integrating creativity with technical expertise.")
+                          "By merging my creative and technical skills, I approach challenges with unique perspectives. I am particularly intrigued by hardware innovation and emerging technologies like quantum computing, and I aim to contribute meaningfully by integrating creativity with technical expertise.".tr)
                     ],
                   ),
                 ),
