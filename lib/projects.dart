@@ -63,135 +63,43 @@ class View1 extends StatelessWidget {
                 child: Center(
                   child: Column(
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "SI-Vison",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Center(
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "Analog Layout Design Intern: Gained hands-on experience in analog layout design, focusing on key concepts such as short channel effects, the semiconductor manufacturing process, and matching techniques for high-performance analog circuits. Proficient in using Synopsys tools for layout design, successfully completing a project that met both Design Rule Check (DRC) and Layout Versus Schematic (LVS) standards."),
+                      if (MediaQuery.of(context).size.width > 650)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 30),
+                              child: Projectcardwidget(
+                                project: Harwareprojects.first,
                               ),
                             ),
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "Huawei ",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Center(
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "Virtualization and Infrastructure Management Intern: Installed and managed VMs, VRMs, and data stores. Used MobaXterm for monitoring, health checks, and live migrations. Monitored KPIs and gained experience in disaster recovery processes."),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 30),
+                              child: Projectcardwidget(
+                                project: Harwareprojects.elementAt(1),
                               ),
                             ),
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "TEDx Fundraising team member",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Center(
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "Helped in raising funds for the event, and helped in organizing the event and getting the sponsors for the event to be a great and successful event"),
+                          ],
+                        )
+                      else
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 30),
+                              child: Projectcardwidget(
+                                project: Harwareprojects.first,
+                                width: 0.8,
                               ),
                             ),
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "Echem",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              child: const Text(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  "Learned feasibility studies, tendering and contract types, process of establishingcompanies from the idea phase till the end of construction and start of operation"),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 30),
+                              child: Projectcardwidget(
+                                project: Harwareprojects.elementAt(1),
+                                width: 0.8,
+                              ),
                             ),
-                          ),
+                          ],
                         ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "Math / CS teaching assistant",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              child: const Text(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  "Helped students in understanding the course material, and helped in solving their problems and questions and explaining the material in a simple way"),
-                            ),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -343,11 +251,15 @@ class View1 extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 30),
-                            child: Projectcardwidget(project: Harwareprojects.first,),
+                            child: Projectcardwidget(
+                              project: Harwareprojects.first,
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 30),
-                            child: Projectcardwidget(project: Harwareprojects.elementAt(1),),
+                            child: Projectcardwidget(
+                              project: Harwareprojects.elementAt(1),
+                            ),
                           ),
                         ],
                       ),

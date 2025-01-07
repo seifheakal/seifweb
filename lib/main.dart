@@ -16,33 +16,14 @@ void main() {
   runApp(const MyApp());
 }
 
-_launchURLBrowser() async {
-  var url = Uri.parse("https://www.linkedin.com/in/seif-heakal");
+_launchURLBrowser(String surl) async {
+  var url = Uri.parse(surl);
   if (await canLaunchUrl(url)) {
     await launchUrl(url);
   } else {
     throw 'Could not launch $url';
   }
 }
-
-_launchURLBrowsere() async {
-  var url = Uri.parse("mailto:seiftamer06@gmail.coml");
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-_launchURLBrowserr() async {
-  var url = Uri.parse("https://github.com/seifheakal");
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
 class messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
@@ -290,21 +271,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
                             TextButton(
-                onPressed: _launchURLBrowser,
+                onPressed: () => _launchURLBrowser("https://www.linkedin.com/in/seif-heakal"),
                 child: Text(
                   "linkedin: Seif Heakal",
                   style: TextStyle(fontSize: 20),
                 ),
               ),
               TextButton(
-                onPressed: _launchURLBrowserr,
+                onPressed: () => _launchURLBrowser("https://github.com/seifheakal"),
                 child: Text(
                   "Github: seifheakal",
                   style: TextStyle(fontSize: 20),
                 ),
               ),
               TextButton(
-                onPressed: _launchURLBrowsere,
+                onPressed: () => _launchURLBrowser("mailto:seiftamer06@gmail.coml"),
                 child: Text(
                   "Gmail: seiftamer06@gmail.com",
                   style: TextStyle(fontSize: 20),
