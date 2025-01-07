@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:seifweb/utils/project_utils.dart';
+import 'package:seifweb/widgets/project_card.dart';
 
 class View1 extends StatelessWidget {
   const View1({super.key});
@@ -337,68 +339,15 @@ class View1 extends StatelessWidget {
                   child: Column(
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Container(
-                            clipBehavior: Clip.antiAlias,
-                            height: MediaQuery.of(context).size.height * 0.4,
-                            width: MediaQuery.of(context).size.width * 0.35,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.blue,
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Image.asset(
-                                  "assets/projects/arch.jpg",
-                                  height:
-                                      MediaQuery.of(context).size.width * 0.2,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  fit: BoxFit.cover,
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 8.0, top: 6, bottom: 2, right: 8),
-                                  child: Text(
-                                    "Title",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.only(left: 8.0, right: 8),
-                                  child: Text(
-                                    "Description",
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                                const Spacer(),
-                                Container(
-                                  color: Colors.deepPurpleAccent,
-                                  padding: const EdgeInsets.symmetric(vertical: 10 ,horizontal: 12),
-                                  alignment: Alignment.topRight,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        "github link",
-                                        style: TextStyle(
-                                          color: Color.fromARGB(255, 183, 255, 0),
-                                        ),
-                                      ),
-                                      Image.asset("assets/projects/git.jpg",),
-                                      
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30),
+                            child: Projectcardwidget(project: Harwareprojects.first,),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30),
+                            child: Projectcardwidget(project: Harwareprojects.elementAt(1),),
                           ),
                         ],
                       ),
