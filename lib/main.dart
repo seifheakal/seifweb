@@ -55,18 +55,12 @@ class messages extends Translations {
           'Experience': 'خبرة',
           'Skills': 'مهارات',
           'Creative': 'ابداع',
-          'Hi': 'مرحبا',
+          'Computer Engineering Student': 'طالب هندسة كمبيوتر',
+          'About Me': 'عني',
           'MY links': 'روابطي',
           'SEIF TAMER HEAKAL': 'سيف تامر هيكل',
-          'Website still under construction': 'الموقع تحت الانشاء',
-          'I’m a computer engineering student with a passion for both technology and creativity. My journey blends technical expertise with a creative mindset, inspired by the themes of perseverance and adventure in *One Piece*, which have also shaped my artistic pursuits.':
-              'أنا طالب هندسة كمبيوتر بشغف للتكنولوجيا والإبداع. تمزج رحلتي بين الخبرة التقنية والعقلية الإبداعية، مستوحاة من مواضيع الصمود والمغامرة في *ون بيس*، التي شكلت أيضًا مساعيي الفنية.',
-          'Technically, I’ve built valuable hands-on experience through internships at Huawei and Si-Vision. At Huawei, I worked on virtualization, server configuration, and network management, managing VMs, VRMs, and data stores while performing live migrations and disaster recovery. At Si-Vision, I focused on analog layout design, mastering short channel effects, matching techniques, and utilizing Synopsys tools to create layouts that passed DRC and LVS.':
-              'من الناحية التقنية، اكتسبت خبرة عملية قيمة من خلال التدريب الصيفي في هواوي وسي-فيجن. في هواوي، عملت على التجازؤ، تكوين الخادم، وإدارة الشبكة، إدارة الآلات الظاهرية، ومخازن البيانات أثناء أداء الترحيل المباشر واستعادة الكوارث. في سي-فيجن، ركزت على تصميم التخطيط الأنالوجي، واستيعاب تأثيرات القناة القصيرة، وتقنيات المطابقة، واستخدام أدوات سينوبسي لإنشاء تخطيطات تجاوزت DRC و LVS.',
-          'During my summer internship at ECHEM, I gained insight into feasibility studies, tendering, contract types, and the process of establishing a company from concept to operation. I also developed strong work ethics, marketing skills, and an understanding of working in a professional environment.':
-              'خلال التدريب الصيفي في إيكيم، اكتسبت رؤى حول دراسات الجدوى، العطاءات، أنواع العقود، وعملية إنشاء شركة من المفهوم إلى التشغيل. كما وضعت أخلاقيات العمل القوية، ومهارات التسويق، وفهم العمل في بيئة مهنية.',
-          'By merging my creative and technical skills, I approach challenges with unique perspectives. I am particularly intrigued by hardware innovation and emerging technologies like quantum computing, and I aim to contribute meaningfully by integrating creativity with technical expertise.': 
-              'من خلال دمج مهاراتي الإبداعية والتقنية، أقترب من التحديات بآفاق فريدة. أنا مهتم بشكل خاص بالابتكار في مجال الأجهزة والتقنيات الناشئة مثل الحوسبة الكمية، وأهدف إلى المساهمة بشكل معنوي من خلال دمج الإبداع مع الخبرة التقنية.',
+          'I’m passionate about digital hardware, frontend development, and cybersecurity, with a keen interest in the transformative potential of quantum computing. I love exploring cutting-edge technologies to create innovative solutions and deepen my understanding of the digital world.':
+              ''
         },
       };
 }
@@ -83,8 +77,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: const Color.fromARGB(255, 17, 9, 40)),
       theme: ThemeData.light(),
-      home: MyHomePage(title: 'Seif Tamer Heakal'.tr),
-      title: 'Seif Tamer Heakal'.tr,
+      home: MyHomePage(title: 'Seif Tamer Heakal'),
+      title: 'Seif Tamer Heakal',
       locale: const Locale('en'),
       translations: messages(),
     );
@@ -107,19 +101,19 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "SEIF TAMER HEAKAL".tr,
+          "SEIF TAMER HEAKAL",
           style: TextStyle(fontSize: 30),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.language),
-            onPressed: () {
-              Get.updateLocale(Get.locale?.languageCode == 'en'
-                  ? Locale('ar')
-                  : Locale('en'));
-            },
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     icon: Icon(Icons.language),
+        //     onPressed: () {
+        //       Get.updateLocale(Get.locale?.languageCode == 'en'
+        //           ? Locale('ar')
+        //           : Locale('en'));
+        //     },
+        //   ),
+        // ],
         leading: IconButton(
             icon: Icon(Icons.dark_mode),
             onPressed: () {
@@ -150,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (context) => const View1()),
                         );
                       },
-                      child: Text("Projects".tr),
+                      child: Text("Projects"),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
                         vertical: 10),
@@ -165,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (context) => const View2()),
                         );
                       },
-                      child: Text("Education".tr),
+                      child: Text("Education"),
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
                         vertical: 10),
@@ -181,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         );
                       },
                       child: Text(
-                        "Experience".tr,
+                        "Experience",
                         //style: TextStyle(fontSize: 30),
                       ),
                     ).paddingSymmetric(
@@ -227,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   AnimatedTextKit(
                     animatedTexts: [
-                      TyperAnimatedText('Computer engineering student',
+                      TyperAnimatedText('Computer Engineering Student'.tr,
                           textStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: MediaQuery.of(context).size.width * 0.05,
@@ -289,23 +283,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       Text(
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.normal),
-                        "I’m a computer engineering student with a passion for both technology and creativity. My journey blends technical expertise with a creative mindset, inspired by the themes of perseverance and adventure in *One Piece*, which have also shaped my artistic pursuits.".tr,
+                        "I’m passionate about digital hardware, frontend development, and cybersecurity, with a keen interest in the transformative potential of quantum computing. I love exploring cutting-edge technologies to create innovative solutions and deepen my understanding of the digital world.".tr,
                       ),
-                      SizedBox(height: 15,),
-                      Text(
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.normal),
-                          "Technically, I’ve built valuable hands-on experience through internships at Huawei and Si-Vision. At Huawei, I worked on virtualization, server configuration, and network management, managing VMs, VRMs, and data stores while performing live migrations and disaster recovery. At Si-Vision, I focused on analog layout design, mastering short channel effects, matching techniques, and utilizing Synopsys tools to create layouts that passed DRC and LVS.".tr),
-                      SizedBox(height: 15,),
-                      Text(
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.normal),
-                          "During my summer internship at ECHEM, I gained insight into feasibility studies, tendering, contract types, and the process of establishing a company from concept to operation. I also developed strong work ethics, marketing skills, and an understanding of working in a professional environment.".tr),
-                      SizedBox(height: 15,),
-                      Text(
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.normal),
-                          "By merging my creative and technical skills, I approach challenges with unique perspectives. I am particularly intrigued by hardware innovation and emerging technologies like quantum computing, and I aim to contribute meaningfully by integrating creativity with technical expertise.".tr)
                     ],
                   ),
                 ),
