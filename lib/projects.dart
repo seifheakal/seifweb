@@ -22,26 +22,25 @@ class View1 extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            bottom: const TabBar(
+            bottom: TabBar(
               tabs: [
                 Tab(
                   child: Text(
                     "Harware projects",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                        fontSize:
+                            MediaQuery.of(context).size.width > 650 ? 20 : 18),
                   ),
                 ),
                 Tab(
                   child: Text(
                     "Software projects",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                        fontSize:
+                            MediaQuery.of(context).size.width > 650 ? 20 : 18),
                   ),
                 ),
-                Tab(
-                  child: Text(
-                    "Other projects",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
+                
               ],
             ),
             title: const Text('Projects'),
@@ -63,19 +62,22 @@ class View1 extends StatelessWidget {
                   child: Column(
                     children: [
                       if (MediaQuery.of(context).size.width > 650)
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 30),
-                              child: Projectcardwidget(
-                                project: Harwareprojects.first,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 30),
-                              child: Projectcardwidget(
-                                project: Harwareprojects.elementAt(1),
+                              padding: const EdgeInsets.only(
+                                  top: 30.0, bottom: 30.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Projectcardwidget(
+                                    project: hardwareprojects.first,
+                                  ),
+                                  Projectcardwidget(
+                                    project: hardwareprojects.elementAt(1),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
@@ -86,14 +88,15 @@ class View1 extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(top: 30),
                               child: Projectcardwidget(
-                                project: Harwareprojects.first,
+                                project: hardwareprojects.first,
                                 width: 0.8,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 30),
+                              padding:
+                                  const EdgeInsets.only(top: 30, bottom: 30),
                               child: Projectcardwidget(
-                                project: Harwareprojects.elementAt(1),
+                                project: hardwareprojects.elementAt(1),
                                 width: 0.8,
                               ),
                             ),
@@ -110,158 +113,96 @@ class View1 extends StatelessWidget {
                 child: Center(
                   child: Column(
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "NASA Space Apps Cairo 2024 Participant",
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      ),
-                      Center(
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "Contributed to a community mapping system designed to showcase general statistics about local communities. Developed heatmaps to visually represent data, enhancing accessibility and understanding for users. This project aimed to facilitate community engagement and provide valuable insights through intuitive mapping techniques."),
+                      if(MediaQuery.of(context).size.width > 650)
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30),
+                                child: Projectcardwidget(
+                                  project: softwareprojects.elementAt(0),
+                                ),
                               ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "Softwaregeya 2024 - Second Place Winner",
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      ),
-                      Center(
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "Participated in a national programming competition focused on low-level programming using assembly language. Collaborated on the development of a boot loader, showcasing a deep understanding of computer architecture and system-level programming. Achieved second place, demonstrating strong problem-solving skills and proficiency in assembly language."),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30),
+                                child: Projectcardwidget(
+                                  project: softwareprojects.elementAt(1),
+                                ),
                               ),
-                            ),
+                            ],
                           ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "RYLA secrets of success",
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      ),
-                      Center(
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                child: const Text(
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    "RYLA in Ain el shokhna, learned the secrets of success, and how to be a successful person in life and in work, and how to be a leader in the community and in the work place"),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30),
+                                child: Projectcardwidget(
+                                  project: softwareprojects.elementAt(2),
+                                ),
                               ),
-                            ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30),
+                                child: Projectcardwidget(
+                                  project: softwareprojects.elementAt(3),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "British council your world competition",
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              child: const Text(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  "participated  in the competition and learned how to be a good speaker and how to present my ideas in a simple and clear way."),
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30),
+                                child: Projectcardwidget(
+                                  project: softwareprojects.elementAt(4),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
-                          "MUN at AUC",
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              child: const Text(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  "leaened how to be a good debater and how to present my ideas in a professional way, and how to be a good listener and how to understand the other person's point of view and how to respect it and how to respond to it in a professional way"),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                physics: const BouncingScrollPhysics(
-                    decelerationRate: ScrollDecelerationRate.normal),
-                child: Center(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        ],
+                      )
+                      else
+                      Column(
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 30),
                             child: Projectcardwidget(
-                              project: Harwareprojects.first,
+                              project: softwareprojects.elementAt(0),
+                              width: 0.8,
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 30),
                             child: Projectcardwidget(
-                              project: Harwareprojects.elementAt(1),
+                              project: softwareprojects.elementAt(1),
+                              width: 0.8,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30),
+                            child: Projectcardwidget(
+                              project: softwareprojects.elementAt(2),
+                              width: 0.8,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30),
+                            child: Projectcardwidget(
+                              project: softwareprojects.elementAt(3),
+                              width: 0.8,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30,bottom: 30),
+                            child: Projectcardwidget(
+                              project: softwareprojects.elementAt(4),
+                              width: 0.8,
                             ),
                           ),
                         ],
-                      ),
+                      )
                     ],
                   ),
                 ),

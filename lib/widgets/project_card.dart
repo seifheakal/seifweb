@@ -17,7 +17,7 @@ class Projectcardwidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: MediaQuery.of(context).size.height * 0.4,
+      height: MediaQuery.of(context).size.height * 0.5,
       width: min(MediaQuery.of(context).size.width * width, 700),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -29,7 +29,7 @@ class Projectcardwidget extends StatelessWidget {
         children: [
           Image.asset(
             project.image,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.3,
             width: min(MediaQuery.of(context).size.width * width, 700),
             fit: BoxFit.cover,
           ),

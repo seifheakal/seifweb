@@ -273,14 +273,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             TextButton(
                 onPressed: () => _launchURLBrowser("https://www.linkedin.com/in/seif-heakal"),
                 child: Text(
-                  "linkedin: Seif Heakal",
+                  "Linkedin: Seif Heakal",
                   style: TextStyle(fontSize: 20),
                 ),
               ),
               TextButton(
                 onPressed: () => _launchURLBrowser("https://github.com/seifheakal"),
                 child: Text(
-                  "Github: seifheakal",
+                  "GitHub: seifheakal",
                   style: TextStyle(fontSize: 20),
                 ),
               ),
