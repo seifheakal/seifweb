@@ -15,7 +15,7 @@ List<ProjectUtils> hardwareprojects = [
     image: 'assets/projects/arch.jpg',
     title: 'CPU Architecture',
     description: 'This project is about making a CPU architecture using VHDL which utlize full forwrding and hazard detection.and 32 instructions contains branching are implemented in this project with 5 stage pipeline. and predction of branch is also implemented in this project.',
-    giturl: 'https://github.com/seifheakal/computer-Architecture'
+    giturl: 'https://github.com/MRKDaGods/arch-proj'
   ),
   ProjectUtils(
     image: 'assets/projects/micro.png',
