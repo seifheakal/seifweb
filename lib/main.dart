@@ -277,13 +277,19 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(
                 height: 15,
               ),
-              Text("Cairo University: Computer and Communication Engineering",
-                  style: TextStyle(fontSize: 22,)),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text("Cairo University: Computer and Communication Engineering",
+                    style: TextStyle(fontSize: 22,)),
+              ),
               SizedBox(
                 height: 20,
               ),
-              Text("Some of the external courses I took",
-                  style: TextStyle(fontSize: 30)),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text("Some of the external courses I took",
+                    style: TextStyle(fontSize: 30)),
+              ),
               SizedBox(
                 height: 15,
               ),

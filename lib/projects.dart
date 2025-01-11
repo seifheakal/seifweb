@@ -154,7 +154,7 @@ class View1 extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(top: 30),
+                                padding: const EdgeInsets.only(top: 30,bottom: 30),
                                 child: Projectcardwidget(
                                   project: softwareprojects.elementAt(4),
                                 ),
