@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, camel_case_types, prefer_const_constructors, sort_child_properties_last, unnecessary_new
 
+import 'dart:math';
+
 import 'package:animated_emoji/animated_emoji.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -24,6 +26,7 @@ _launchURLBrowser(String surl) async {
     throw 'Could not launch $url';
   }
 }
+
 class messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
@@ -129,21 +132,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     ).paddingSymmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.05,
                         vertical: 10),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 3,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const View2()),
-                        );
-                      },
-                      child: Text("Education"),
-                    ).paddingSymmetric(
-                        horizontal: MediaQuery.of(context).size.width * 0.05,
-                        vertical: 10),
+                    // ElevatedButton(
+                    //   style: ElevatedButton.styleFrom(
+                    //     elevation: 3,
+                    //   ),
+                    //   onPressed: () {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //           builder: (context) => const View2()),
+                    //     );
+                    //   },
+                    //   child: Text("Education"),
+                    // ).paddingSymmetric(
+                    //     horizontal: MediaQuery.of(context).size.width * 0.05,
+                    //     vertical: 10),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 3,
@@ -247,7 +250,6 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(
                 height: 70,
               ),
-
               const Text(
                 "About Me",
                 style: TextStyle(fontSize: 30),
@@ -256,36 +258,68 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 15,
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 30),
+                padding: const EdgeInsets.only(bottom: 20),
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.9,
                   child: Column(
                     children: [
                       Text(
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.normal),
-                        "I’m passionate about digital hardware, frontend development, and cybersecurity, with a keen interest in the transformative potential of quantum computing. I love exploring cutting-edge technologies to create innovative solutions and deepen my understanding of the digital world.".tr,
+                            fontSize: 20, fontWeight: FontWeight.normal),
+                        "I’m passionate about digital hardware, frontend development, and cybersecurity. I’m also very interested in quantum computing and its discoveries. I enjoy learning about new technologies and finding ways to understand and use them."
+                            .tr,
                       ),
                     ],
                   ),
                 ),
               ),
-                            TextButton(
-                onPressed: () => _launchURLBrowser("https://www.linkedin.com/in/seif-heakal"),
+              Text("Education".tr, style: TextStyle(fontSize: 30)),
+              SizedBox(
+                height: 15,
+              ),
+              Text("Cairo University: Computer and Communication Engineering",
+                  style: TextStyle(fontSize: 22,)),
+              SizedBox(
+                height: 20,
+              ),
+              Text("Some of the external courses I took",
+                  style: TextStyle(fontSize: 30)),
+              SizedBox(
+                height: 15,
+              ),
+              Text("IBM Cybersecurity Analyst Professional",
+                  style: TextStyle(fontSize: 22)),
+              SizedBox(
+                height: 5,
+              ),
+              Text("ISTQB foundation level", style: TextStyle(fontSize: 22)),
+              SizedBox(
+                height: 5,
+              ),
+              Text("Google Digital Marketing Certificate",
+                  style: TextStyle(fontSize: 22)),
+              SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () => _launchURLBrowser(
+                    "https://www.linkedin.com/in/seif-heakal"),
                 child: Text(
                   "Linkedin: Seif Heakal",
                   style: TextStyle(fontSize: 20),
                 ),
               ),
               TextButton(
-                onPressed: () => _launchURLBrowser("https://github.com/seifheakal"),
+                onPressed: () =>
+                    _launchURLBrowser("https://github.com/seifheakal"),
                 child: Text(
                   "GitHub: seifheakal",
                   style: TextStyle(fontSize: 20),
                 ),
               ),
               TextButton(
-                onPressed: () => _launchURLBrowser("mailto:seiftamer06@gmail.coml"),
+                onPressed: () =>
+                    _launchURLBrowser("mailto:seiftamer06@gmail.coml"),
                 child: Text(
                   "Gmail: seiftamer06@gmail.com",
                   style: TextStyle(fontSize: 20),

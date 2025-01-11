@@ -17,7 +17,7 @@ class Projectcardwidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: MediaQuery.of(context).size.height * 0.5,
+      height: max(MediaQuery.of(context).size.height * 0.5,300),
       width: min(MediaQuery.of(context).size.width * width, 700),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -29,7 +29,7 @@ class Projectcardwidget extends StatelessWidget {
         children: [
           Image.asset(
             project.image,
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: max(MediaQuery.of(context).size.height * 0.3,300*0.6),
             width: min(MediaQuery.of(context).size.width * width, 700),
             fit: BoxFit.cover,
           ),
@@ -44,16 +44,31 @@ class Projectcardwidget extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8),
-            child: Text(
-              project.description,
-              style: const TextStyle(
-                fontSize: 12,
+          Expanded(
+            child: SizedBox(
+              width: min(MediaQuery.of(context).size.width * width, 700),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                physics: const BouncingScrollPhysics(
+                    decelerationRate: ScrollDecelerationRate.normal),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8),
+                      child: Text(
+                        project.description,
+                        style: const TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
-          const Spacer(),
+          
           Container(
             color: const Color.fromARGB(255, 72, 67, 90),
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
